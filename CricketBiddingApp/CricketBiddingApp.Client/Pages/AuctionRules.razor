@@ -1,0 +1,50 @@
+﻿@page "/auction-rules"
+@inject HttpClient Http
+
+<h3>Auction Rules</h3>
+
+@if (rules == null)
+{
+    <p>Loading auction rules...</p>
+}
+else
+{
+    <EditForm Model="rules" OnValidSubmit="UpdateAuctionRules">
+        <div class="form-group">
+            <label for="playerLimit">Player Limit</label>
+            <InputNumber id="playerLimit" @bind-Value="rules.PlayerLimit" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="maxBudget">Max Budget</label>
+            <InputNumber id="maxBudget" @bind-Value="rules.MaxBudget" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="minBidAmount">Minimum Bid Amount</label>
+            <InputNumber id="minBidAmount" @bind-Value="rules.MinimumBidAmount" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Rules</button>
+    </EditForm>
+}
+
+@code {
+    private AuctionRule rules;
+
+    protected override async Task OnInitializedAsync()
+    {
+        rules = await Http.GetFromJsonAsync<AuctionRule>("api/AuctionRules");
+    }
+
+    private async Task UpdateAuctionRules()
+    {
+        await Http.PutAsJsonAsync("api/AuctionRules", rules);
+        // Show success message
+    }
+
+    public class AuctionRule
+    {
+        public int PlayerLimit { get; set; }
+        public decimal MaxBudget { get; set; }
+        public decimal MinimumBidAmount { get; set; }
+    }
+}

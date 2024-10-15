@@ -1,0 +1,51 @@
+﻿@page "/auctions"
+@inject HttpClient Http
+
+<h3>Ongoing Auctions</h3>
+
+@if (auctions == null)
+{
+    <p>Loading auctions...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Team</th>
+                <th>Bid Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var auction in auctions)
+            {
+                <tr>
+                    <td>@auction.PlayerName</td>
+                    <td>@auction.TeamName</td>
+                    <td>@auction.Amount</td>
+                    <td>@auction.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Auctions> auctions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        auctions = await Http.GetFromJsonAsync<List<Auctions>>("api/Auction");
+    }
+
+    public class Auctions
+    {
+        public int Id { get; set; }
+        public string PlayerName { get; set; }
+        public string TeamName { get; set; }
+        public decimal Amount { get; set; }
+        public string Status { get; set; }
+    }
+}

@@ -1,0 +1,39 @@
+﻿@page "/create-auction"
+@inject HttpClient Http
+
+<h3>Create New Auction</h3>
+
+<EditForm Model="newAuction" OnValidSubmit="SubmitAuction">
+    <div class="form-group">
+        <label for="playerId">Player ID</label>
+        <InputNumber id="playerId" @bind-Value="newAuction.PlayerId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="teamId">Team ID</label>
+        <InputNumber id="teamId" @bind-Value="newAuction.TeamId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="amount">Bid Amount</label>
+        <InputNumber id="amount" @bind-Value="newAuction.Amount" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Auction</button>
+</EditForm>
+
+@code {
+    private Auction newAuction = new Auction();
+
+    // Renamed from CreateAuction to SubmitAuction
+    private async Task SubmitAuction()
+    {
+        await Http.PostAsJsonAsync("api/auctions", newAuction);
+        // Show success message or redirect after creation
+    }
+
+    public class Auction
+    {
+        public int PlayerId { get; set; }
+        public int TeamId { get; set; }
+        public decimal Amount { get; set; }
+    }
+}

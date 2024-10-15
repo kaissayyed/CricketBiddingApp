@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CricketBiddingApp.Client.props" />
+</Project>
