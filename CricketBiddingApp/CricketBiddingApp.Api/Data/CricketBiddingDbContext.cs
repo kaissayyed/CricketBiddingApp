@@ -14,10 +14,14 @@ namespace CricketBiddingApp.Api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Team>()
-            //    .ToTable("Team"); 
-            //modelBuilder.Entity<Player>()
-            //    .ToTable("Player");
+            modelBuilder.Entity<Team>()
+                .ToTable("Team");
+            modelBuilder.Entity<Player>()
+                .ToTable("Player");
+            modelBuilder.Entity<Auction>()
+                .ToTable("Auction");
+            modelBuilder.Entity<AuctionRule>()
+                .ToTable("AuctionRule");
             base.OnModelCreating(modelBuilder);
         }
 

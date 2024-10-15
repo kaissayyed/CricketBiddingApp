@@ -28,13 +28,6 @@ namespace CricketBiddingApp.Api.Controllers
                 return BadRequest("Start time must be earlier than end time.");
             }
 
-            // Optionally, check if the auction rule exists
-            var auctionRule = await _context.AuctionRules.FindAsync(auction.AuctionRuleId);
-            if (auctionRule == null)
-            {
-                return NotFound("Auction rule not found.");
-            }
-
             auction.IsActive = true; // Set auction as active
             _context.Auctions.Add(auction);
             await _context.SaveChangesAsync();
