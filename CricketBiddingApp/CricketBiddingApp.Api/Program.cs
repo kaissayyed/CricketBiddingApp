@@ -14,6 +14,23 @@ builder.Services.AddDbContext<CricketBiddingDbContext>(options =>
 
 var app = builder.Build();
 
+// Apply any pending migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<CricketBiddingDbContext>();
+        context.Database.Migrate(); // This applies pending migrations
+    }
+    catch (Exception ex)
+    {
+        // Log or handle errors during migration
+        Console.WriteLine($"An error occurred while migrating the database: {ex.Message}");
+    }
+}
+
+// Swagger setup in development environment
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -26,4 +43,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

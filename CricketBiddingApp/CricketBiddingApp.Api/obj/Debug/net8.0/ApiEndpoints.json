@@ -1,5 +1,77 @@
 [
   {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionController",
+    "Method": "CreateAuction",
+    "RelativePath": "api/Auction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "auction",
+        "Type": "CricketBiddingApp.Api.Models.Auction",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CricketBiddingApp.Api.Models.Auction",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionController",
+    "Method": "GetAllAuctions",
+    "RelativePath": "api/Auction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CricketBiddingApp.Api.Models.Auction, CricketBiddingApp.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionController",
+    "Method": "GetAuction",
+    "RelativePath": "api/Auction/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CricketBiddingApp.Api.Models.Auction",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CricketBiddingApp.Api.Controllers.PlayersController",
     "Method": "PostPlayer",
     "RelativePath": "api/Players",
@@ -42,6 +114,72 @@
     "ReturnTypes": [
       {
         "Type": "CricketBiddingApp.Api.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.PlayersController",
+    "Method": "PlaceBid",
+    "RelativePath": "api/Players/bid/{playerId}/{teamId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "playerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "teamId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bidAmount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.PlayersController",
+    "Method": "GetSoldPlayers",
+    "RelativePath": "api/Players/players/sold",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CricketBiddingApp.Api.Models.Player, CricketBiddingApp.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.PlayersController",
+    "Method": "GetUnsoldPlayers",
+    "RelativePath": "api/Players/players/unsold",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CricketBiddingApp.Api.Models.Player, CricketBiddingApp.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

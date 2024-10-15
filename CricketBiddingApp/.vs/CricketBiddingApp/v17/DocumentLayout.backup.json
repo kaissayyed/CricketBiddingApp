@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\models\\auctionrule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\models\\auctionrule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\models\\auction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\controllers\\auctioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\data\\cricketbiddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\data\\cricketbiddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\controllers\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,20 +31,16 @@
       "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\services\\auctionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\services\\auctionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\data\\cricketbiddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\data\\cricketbiddingdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|solutionrelative:cricketbiddingapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CE06C35-5F9F-442D-BC2C-888E6E87ABBE}|CricketBiddingApp.Api\\CricketBiddingApp.Api.csproj|c:\\users\\kais\\desktop\\dev\\cricketbiddingapp\\cricketbiddingapp\\cricketbiddingapp.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -38,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,46 +74,98 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuctionController.cs",
+              "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Controllers\\AuctionController.cs",
+              "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Controllers\\AuctionController.cs",
+              "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Controllers\\AuctionController.cs",
+              "RelativeToolTip": "CricketBiddingApp.Api\\Controllers\\AuctionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:24:12.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Auction.cs",
+              "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\Auction.cs",
+              "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Models\\Auction.cs",
+              "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\Auction.cs",
+              "RelativeToolTip": "CricketBiddingApp.Api\\Models\\Auction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T09:10:35.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuctionServices.cs",
+              "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Services\\AuctionServices.cs",
+              "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Services\\AuctionServices.cs",
+              "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Services\\AuctionServices.cs",
+              "RelativeToolTip": "CricketBiddingApp.Api\\Services\\AuctionServices.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwB0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T08:56:50.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuctionRule.cs",
+              "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\AuctionRule.cs",
+              "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Models\\AuctionRule.cs",
+              "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\AuctionRule.cs",
+              "RelativeToolTip": "CricketBiddingApp.Api\\Models\\AuctionRule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T08:55:27.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Team.cs",
               "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\Team.cs",
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Models\\Team.cs",
               "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\Team.cs",
               "RelativeToolTip": "CricketBiddingApp.Api\\Models\\Team.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T06:19:28.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\Player.cs",
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Models\\Player.cs",
               "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Models\\Player.cs",
               "RelativeToolTip": "CricketBiddingApp.Api\\Models\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T06:20:06.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Controllers\\PlayerController.cs",
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Controllers\\PlayerController.cs",
               "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Controllers\\PlayerController.cs",
               "RelativeToolTip": "CricketBiddingApp.Api\\Controllers\\PlayerController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwCoAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T06:23:05.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "TeamController.cs",
               "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Controllers\\TeamController.cs",
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Controllers\\TeamController.cs",
@@ -110,13 +178,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Program.cs",
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Program.cs",
               "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Program.cs",
               "RelativeToolTip": "CricketBiddingApp.Api\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T06:18:51.11Z",
               "EditorCaption": ""
@@ -129,14 +197,14 @@
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\Data\\CricketBiddingDbContext.cs",
               "ToolTip": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\Data\\CricketBiddingDbContext.cs",
               "RelativeToolTip": "CricketBiddingApp.Api\\Data\\CricketBiddingDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T06:17:44.861Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Api\\appsettings.json",
               "RelativeDocumentMoniker": "CricketBiddingApp.Api\\appsettings.json",
