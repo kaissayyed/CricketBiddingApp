@@ -1,0 +1,6 @@
+@CricketBiddingApp.Api_HostAddress = http://localhost:5155
+
+GET {{CricketBiddingApp.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
