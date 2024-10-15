@@ -12,6 +12,7 @@ namespace CricketBiddingApp.Api.Data
         public DbSet<AuctionRule> AuctionRules { get; set; }
         public DbSet<Auction> Auctions { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Team>()
