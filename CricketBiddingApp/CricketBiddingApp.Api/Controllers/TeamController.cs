@@ -18,26 +18,40 @@ namespace CricketBiddingApp.Api.Controllers
         }
 
         // POST: api/Teams
-        [HttpPost]
-        public async Task<ActionResult<Team>> PostTeam(Team team)
+        // GET: api/teams
+        [HttpGet]
+        public ActionResult<IEnumerable<Team>> GetTeams()
         {
-            _context.Teams.Add(team);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetTeam), new { id = team.Id }, team);
+            return _context.Teams.ToList();
         }
 
-        // GET: api/Teams/{id}
+        // GET: api/teams/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Team>> GetTeam(int id)
+        public ActionResult<Team> GetTeam(int id)
         {
-            var team = await _context.Teams.Include(t => t.Players).FirstOrDefaultAsync(t => t.Id == id);
+            var team = _context.Teams.Find(id);
+
             if (team == null)
             {
                 return NotFound();
             }
+
             return team;
         }
+
+        // POST: api/teams
+        [HttpPost]
+        public ActionResult<Team> CreateTeam([FromBody] Team team)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _context.Teams.Add(team);
+            _context.SaveChanges();
+
+            return CreatedAtAction(nameof(GetTeam), new { id = team.Id }, team);
+        }
     }
-
-
 }

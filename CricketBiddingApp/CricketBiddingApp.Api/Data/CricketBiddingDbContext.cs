@@ -9,7 +9,6 @@ namespace CricketBiddingApp.Api.Data
 
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
-        public DbSet<AuctionRule> AuctionRules { get; set; }
         public DbSet<Auction> Auctions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,8 +19,6 @@ namespace CricketBiddingApp.Api.Data
                 .ToTable("Player");
             modelBuilder.Entity<Auction>()
                 .ToTable("Auction");
-            modelBuilder.Entity<AuctionRule>()
-                .ToTable("AuctionRule");
             base.OnModelCreating(modelBuilder);
         }
 

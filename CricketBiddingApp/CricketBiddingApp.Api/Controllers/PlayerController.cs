@@ -1,8 +1,6 @@
 ﻿using CricketBiddingApp.Api.Data;
 using CricketBiddingApp.Api.Models;
-using CricketBiddingApp.Api.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace CricketBiddingApp.Api.Controllers
@@ -19,68 +17,56 @@ namespace CricketBiddingApp.Api.Controllers
             _context = context;
         }
 
-        // POST: api/Players
-        [HttpPost]
-        public async Task<ActionResult<Player>> PostPlayer(Player players)
+        // GET: api/players
+        [HttpGet]
+        public ActionResult<IEnumerable<Player>> GetPlayers()
         {
-            try
-            {
-                _context.Players.Add(players);
-                await _context.SaveChangesAsync();
-                return CreatedAtAction(nameof(GetPlayer), new { id = players.Id }, players);
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex);
-                return BadRequest(ex.Message);
-            }
-           
+            return _context.Players.ToList();
         }
 
-        // GET: api/Players/{id}
+        // GET: api/players/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<Player>> GetPlayer(int id)
+        public ActionResult<Player> GetPlayer(int id)
         {
-            var player = await _context.Players.Include(p => p.Teams).FirstOrDefaultAsync(p => p.Id == id);
+            var player = _context.Players.Find(id);
+
             if (player == null)
             {
                 return NotFound();
             }
+
             return player;
         }
 
-        [HttpPost("bid/{playerId}/{teamId}")]
-        public async Task<ActionResult> PlaceBid(int playerId, int teamId, decimal bidAmount)
+        // POST: api/players
+        [HttpPost]
+        public ActionResult<Player> CreatePlayer([FromBody] Player player)
         {
-            var auctionService = new AuctionService(_context);
-            var result = await auctionService.BidOnPlayer(playerId, teamId, bidAmount);
-
-            if (result is BadRequestResult)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Error in bidding: " + result);
+                return BadRequest(ModelState);
             }
 
-            return Ok("Bid placed successfully.");
+            _context.Players.Add(player);
+            _context.SaveChanges();
+
+            return CreatedAtAction(nameof(GetPlayer), new { id = player.Id }, player);
         }
 
-        [HttpGet("players/sold")]
-        public async Task<ActionResult<List<Player>>> GetSoldPlayers()
+        // GET: api/players/sold
+        [HttpGet("sold")]
+        public ActionResult<IEnumerable<Player>> GetSoldPlayers()
         {
-            var soldPlayers = await _context.Players.Include(p => p.Teams)
-                                                    .Where(p => p.IsSold)
-                                                    .ToListAsync();
-            return Ok(soldPlayers);
+            var soldPlayers = _context.Players.Where(p => p.IsSold == true).ToList();
+            return soldPlayers;
         }
 
-        [HttpGet("players/unsold")]
-        public async Task<ActionResult<List<Player>>> GetUnsoldPlayers()
+        // GET: api/players/unsold
+        [HttpGet("unsold")]
+        public ActionResult<IEnumerable<Player>> GetUnsoldPlayers()
         {
-            var unsoldPlayers = await _context.Players.Include(p => p.Teams)
-                                                      .Where(p => !p.IsSold)
-                                                      .ToListAsync();
-            return Ok(unsoldPlayers);
+            var unsoldPlayers = _context.Players.Where(p => p.IsSold == false).ToList();
+            return unsoldPlayers;
         }
-
     }
-
 }
