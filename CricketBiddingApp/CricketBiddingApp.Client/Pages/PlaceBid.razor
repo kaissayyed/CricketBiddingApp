@@ -1,0 +1,78 @@
+﻿@page "/place-bid"
+@inject HttpClient Http
+
+<h3>Place Bid for Auction ID: @id</h3>
+
+@if (players == null || players.Count == 0)
+{
+    <p>Loading players...</p>
+}
+else
+{
+    <div>
+        <label for="playerSelect">Select Player:</label>
+        <select id="playerSelect" @bind="selectedPlayerId">
+            <option value="">-- Select a Player --</option>
+            @foreach (var player in players)
+            {
+                <option value="@player.Id">@player.Name (Current Bid: @player.CurrentBid)</option>
+            }
+        </select>
+
+        <div>
+            <input type="number" @bind="bidAmount" placeholder="Enter your bid" min="0" />
+            <button class="btn btn-primary" @onclick="GetBid" disabled="@(!IsValidBid)">Place Bid</button>
+        </div>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert alert-info">@message</div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+    private List<Player> players;
+    private List<Team> teams;
+    private int selectedPlayerId;
+    private int selectedTeamId;
+    private decimal bidAmount;
+    private string message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch the players for the auction
+        players = await Http.GetFromJsonAsync<List<Player>>($"/api/Players");
+        teams = await Http.GetFromJsonAsync<List<Team>>($"/api/Teams");
+
+    }
+
+
+    private bool IsValidBid => selectedPlayerId > 0 && bidAmount > 0 && selectedTeamId>0;
+
+    private async Task GetBid()
+    {
+        var bidRequest = new { PlayerId = selectedPlayerId, BidAmount = bidAmount, TeamId = selectedTeamId }; // Replace with actual TeamId
+
+        var response = await Http.PostAsJsonAsync($"api/Auctions/{id}/bid", bidRequest);
+
+        if (response.IsSuccessStatusCode)
+        {
+            message = "Bid placed successfully!";
+            // Optionally refresh the player list or redirect
+        }
+        else
+        {
+            message = await response.Content.ReadAsStringAsync();
+        }
+    }
+
+    public class Player
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal CurrentBid { get; set; }
+        public bool IsSold { get; set; }
+    }
+}

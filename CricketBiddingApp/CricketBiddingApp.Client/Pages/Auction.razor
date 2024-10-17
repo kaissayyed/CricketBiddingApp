@@ -1,0 +1,48 @@
+﻿@page "/auctions"
+@inject HttpClient Http
+@code {
+    private List<Auctions> auctions = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        auctions = await Http.GetFromJsonAsync<List<Auctions>>("api/Auctions");
+    }
+    public class Auctions
+    {
+        public int Id { get; set; }
+        public List<Player> Players { get; set; }
+        public List<Team> Teams { get; set; }
+        public decimal TotalBudget { get; set; }
+        public DateTime StartDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
+    }
+}
+
+<h3>Active Auctions</h3>
+@if (auctions != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Total Budget</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var auction in auctions)
+            {
+                <tr>
+                    <td>@auction.Id</td>
+                    <td>@auction.TotalBudget</td>
+                    <td>@auction.StartDateTime.ToString("g")</td>
+                    <td>@auction.EndDateTime.ToString("g")</td>
+                    <td>
+                        <a href="/auction/@auction.Id" class="btn btn-primary">View Auction</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

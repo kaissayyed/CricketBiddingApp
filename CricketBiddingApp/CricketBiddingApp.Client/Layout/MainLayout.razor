@@ -1,0 +1,36 @@
+﻿@inherits LayoutComponentBase
+
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="">Cricket Bidding App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">Home</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/auctions">Auctions</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/create-auction">Create Auction</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/auction/{id:int}">Auction Detail</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/place-bid">Place Bid</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/players">Players</NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="content px-4">
+    @Body
+</div>

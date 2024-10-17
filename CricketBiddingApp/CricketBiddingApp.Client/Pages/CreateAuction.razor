@@ -1,0 +1,119 @@
+﻿@page "/create-auction"
+@inject HttpClient Http
+@code {
+    private Auction newAuction = new Auction();
+    private string errorMessage = "";
+    private bool successMessage = false;
+
+    private async Task SubmitAuction()
+    {
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/Auctions", newAuction);
+            if (response.IsSuccessStatusCode)
+            {
+                successMessage = true;
+            }
+            else
+            {
+                errorMessage = "Failed to create auction.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    public class Auction
+    {
+        public string Name { get; set; }
+        public decimal TotalBudget { get; set; }
+        public DateTime StartDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
+        public List<Team> Teams { get; set; } = new List<Team>();  // You can allow the admin to add teams manually here
+    }
+
+    public class Team
+    {
+        public string Name { get; set; }
+        public decimal Budget { get; set; }
+        public int MaxPlayers { get; set; }
+    }
+}
+
+<h3>Create Auction</h3>
+
+@if (successMessage)
+{
+    <div class="alert alert-success">
+        Auction successfully created!
+    </div>
+}
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
+
+<form>
+    <div class="form-group">
+        <label for="auctionName">Auction Name</label>
+        <input type="text" class="form-control" id="auctionName" @bind="newAuction.Name" placeholder="Enter auction name" />
+    </div>
+
+    <div class="form-group">
+        <label for="totalBudget">Total Budget</label>
+        <input type="number" class="form-control" id="totalBudget" @bind="newAuction.TotalBudget" placeholder="Enter total budget" />
+    </div>
+
+    <div class="form-group">
+        <label for="startDate">Start Date and Time</label>
+        <input type="datetime-local" class="form-control" id="startDate" @bind="newAuction.StartDateTime" />
+    </div>
+
+    <div class="form-group">
+        <label for="endDate">End Date and Time</label>
+        <input type="datetime-local" class="form-control" id="endDate" @bind="newAuction.EndDateTime" />
+    </div>
+
+    <h4>Teams</h4>
+    <button type="button" class="btn btn-primary" @onclick="AddTeam">Add Team</button>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Budget</th>
+                <th>Max Players</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var team in newAuction.Teams)
+            {
+                <tr>
+                    <td>@team.Name</td>
+                    <td>@team.Budget</td>
+                    <td>@team.MaxPlayers</td>
+                    <td><button type="button" class="btn btn-danger" @onclick="() => RemoveTeam(team)">Remove</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success" @onclick="SubmitAuction">Create Auction</button>
+</form>
+
+@code {
+    private void AddTeam()
+    {
+        newAuction.Teams.Add(new Team());
+    }
+
+    private void RemoveTeam(Team team)
+    {
+        newAuction.Teams.Remove(team);
+    }
+}

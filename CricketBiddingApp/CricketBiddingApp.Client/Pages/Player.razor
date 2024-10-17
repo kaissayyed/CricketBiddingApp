@@ -1,0 +1,92 @@
+﻿@page "/players"
+@inject HttpClient Http
+
+<h3>Sold and Unsold Players</h3>
+
+<div>
+    <h4>Sold Players</h4>
+    @if (soldPlayers == null)
+    {
+        <p>Loading...</p>
+    }
+    else if (!soldPlayers.Any())
+    {
+        <p>No players have been sold yet.</p>
+    }
+    else
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in soldPlayers)
+                {
+                    <tr>
+                        <td>@player.Id</td>
+                        <td>@player.Name</td>
+                        <td>@player.Category</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+<hr />
+
+<div>
+    <h4>Unsold Players</h4>
+    @if (unsoldPlayers == null)
+    {
+        <p>Loading...</p>
+    }
+    else if (!unsoldPlayers.Any())
+    {
+        <p>All players have been sold.</p>
+    }
+    else
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in unsoldPlayers)
+                {
+                    <tr>
+                        <td>@player.Id</td>
+                        <td>@player.Name</td>
+                        <td>@player.Category</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@code {
+    private List<Players> soldPlayers;
+    private List<Players> unsoldPlayers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        soldPlayers = await Http.GetFromJsonAsync<List<Players>>("api/Players/sold");
+        unsoldPlayers = await Http.GetFromJsonAsync<List<Players>>("api/Players/unsold");
+    }
+    public class Players
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public bool IsSold { get; set; }
+    }
+}

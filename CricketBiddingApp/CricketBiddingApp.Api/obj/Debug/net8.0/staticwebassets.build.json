@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xJAwVFC79v0LUnD9KgVDU+SnXJvGGt4uNNSOzSOCOdE=",
+  "Source": "CricketBiddingApp.Api",
+  "BasePath": "_content/CricketBiddingApp.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

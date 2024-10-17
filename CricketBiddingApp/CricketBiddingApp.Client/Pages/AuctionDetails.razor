@@ -1,0 +1,109 @@
+﻿@page "/auction/{id:int}"
+@inject HttpClient Http
+
+@code {
+    [Parameter] public int id { get; set; }
+    private Auction auction;
+    private string bidAmount = "";
+    private int selectedTeamId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        auction = await Http.GetFromJsonAsync<Auction>($"api/Auctions/{id}");
+    }
+
+    private async Task PlaceBid(int playerId)
+    {
+        var bidRequest = new
+        {
+            PlayerId = playerId,
+            BidAmount = decimal.Parse(bidAmount),
+            TeamId = selectedTeamId
+        };
+
+        var response = await Http.PostAsJsonAsync($"api/auctions/{id}/bid", bidRequest);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Handle successful bid (refresh or show a success message)
+        }
+        else
+        {
+            // Handle error (show error message)
+        }
+    }
+
+    public class Auction
+    {
+        public int Id { get; set; }
+        public List<Player> Players { get; set; }
+        public List<Team> Teams { get; set; }
+        public decimal TotalBudget { get; set; }
+        public DateTime StartDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
+    }
+
+    public class Player
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public bool IsSold { get; set; }
+        public decimal CurrentBid { get; set; }
+        public int WinningTeamId { get; set; }
+    }
+
+    public class Team
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Budget { get; set; }
+    }
+}
+
+<h3>Auction Details - ID: @id</h3>
+
+@if (auction != null)
+{
+    <div>
+        <h4>Players</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Is Sold</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in auction.Players)
+                {
+                    <tr>
+                        <td>@player.Name</td>
+                        <td>@player.Category</td>
+                        <td>@(player.IsSold ? "Yes (Team: " + auction.Teams.FirstOrDefault(t => t.Id == player.WinningTeamId)?.Name + ")" : "No")</td>
+                        <td>
+                            @if (!player.IsSold)
+                            {
+                                <input type="number" @bind="bidAmount" />
+                                <select @bind="selectedTeamId" class="form-control">
+                                    <option value="">Select Team</option>
+                                    @foreach (var team in auction.Teams)
+                                    {
+                                        <option value="@team.Id">@team.Name</option>
+                                    }
+                                </select>
+                                <button class="btn btn-success" @onclick="() => PlaceBid(player.Id)">Place Bid</button>
+                            }
+                            else
+                            {
+                                <span>Sold</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
