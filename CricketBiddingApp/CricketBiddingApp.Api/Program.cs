@@ -1,4 +1,5 @@
 using CricketBiddingApp.Api.Data;
+using CricketBiddingApp.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,12 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IAuctionService, AuctionService>();
 
 // PostgreSQL configuration
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQLConnection");
 builder.Services.AddDbContext<CricketBiddingDbContext>(options =>
     options.UseNpgsql(connectionString));
-
 var app = builder.Build();
 
 // Apply any pending migrations on startup

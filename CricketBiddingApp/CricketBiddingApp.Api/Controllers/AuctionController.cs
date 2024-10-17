@@ -1,25 +1,38 @@
 ﻿using CricketBiddingApp.Api.Data;
 using CricketBiddingApp.Api.Models;
+using CricketBiddingApp.Api.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CricketBiddingApp.Api.Controllers
 {
-    // Controllers/AuctionsController.cs
-    using Microsoft.AspNetCore.Mvc;
-    using System.Linq;
-
     [Route("api/[controller]")]
     [ApiController]
     public class AuctionsController : ControllerBase
     {
         private readonly CricketBiddingDbContext _context;
+        private readonly IAuctionService _auctionService;
 
-        public AuctionsController(CricketBiddingDbContext context)
+        public AuctionsController(CricketBiddingDbContext context, IAuctionService auctionService) 
         {
             _context = context;
+            _auctionService = auctionService;
         }
 
-        [HttpPost]
+        // GET: api/auctions
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Auction>>> GetAllAuctions()
+        {
+            var auctions = await _auctionService.GetAllAuctionsAsync();
+            if (auctions == null || auctions.Count == 0)
+            {
+                return NotFound("No auctions found.");
+            }
+
+            return Ok(auctions);
+        }
+
+        // POST: api/auctions
         [HttpPost]
         public IActionResult CreateAuction([FromBody] Auction auction)
         {
@@ -37,45 +50,69 @@ namespace CricketBiddingApp.Api.Controllers
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetAuction), new { id = auction.Id }, auction);
         }
+
+        // GET: api/auctions/{id}
         [HttpGet("{id}")]
         public ActionResult<Auction> GetAuction(int id)
         {
-            var auction = _context.Auctions.Find(id);
+            var auction = _context.Auctions
+                .Include(a => a.Players) // Include related players
+                .FirstOrDefault(a => a.Id == id);
+
             if (auction == null)
             {
-                return NotFound();
+                return NotFound("Auction not found.");
             }
+
             return auction;
         }
 
-        [HttpPost("{auctionId}/bid")]
-        public IActionResult PlaceBid(int auctionId, [FromBody] BidRequest bidRequest)
+        // POST: api/auctions/{id}/bid
+        [HttpPost("{id}/bid")]
+        public IActionResult PlaceBid(int id, [FromBody] BidRequest bid)
         {
-            var auction = _context.Auctions.Include(a => a.Players).FirstOrDefault(a => a.Id == auctionId);
-            if (auction == null) return NotFound();
+            var auction = _context.Auctions
+                .Include(a => a.Players) // Include players
+                .FirstOrDefault(a => a.Id == id);
 
-            // Check if the auction is currently active
-            if (DateTime.UtcNow < auction.StartDateTime || DateTime.UtcNow > auction.EndDateTime)
+            if (auction == null)
             {
-                return BadRequest("Bidding is not allowed outside of the auction time.");
+                return NotFound("Auction not found.");
             }
 
-            var player = auction.Players.FirstOrDefault(p => p.Id == bidRequest.PlayerId);
-            if (player == null || player.IsSold) return BadRequest("Player not available for bidding.");
+            var player = auction.Players.FirstOrDefault(p => p.Id == bid.PlayerId);
+            var team = _context.Teams.FirstOrDefault(t => t.Id == bid.TeamId);
 
-            var team = _context.Teams.Find(bidRequest.TeamId);
-            if (team == null || team.Budget < bidRequest.BidAmount) return BadRequest("Insufficient budget.");
+            if (player == null || team == null)
+            {
+                return BadRequest("Invalid player or team.");
+            }
 
-            // If the bid is higher than current bids (if any), process the bid
-            // You can implement more logic to handle existing bids
-            team.Budget -= bidRequest.BidAmount;
+            // Check if the bid is higher than the current bid
+            if (bid.BidAmount <= player.CurrentBid)
+            {
+                return BadRequest("Bid amount must be higher than the current bid.");
+            }
+
+            // Check if the team has enough budget
+            if (team.Budget < bid.BidAmount)
+            {
+                return BadRequest("Team does not have enough budget.");
+            }
+
+            // Update the player with the new highest bid
+            player.CurrentBid = bid.BidAmount;
+            player.WinningTeamId = bid.TeamId;
+
+            // Mark player as sold
             player.IsSold = true;
-            team.Players.Add(player);
+
+            // Deduct the bid amount from the team's budget
+            team.Budget -= bid.BidAmount;
 
             _context.SaveChanges();
-            return Ok();
+
+            return Ok("Bid placed successfully.");
         }
     }
-
-
 }

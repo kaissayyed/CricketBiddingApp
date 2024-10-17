@@ -1,7 +1,6 @@
 ﻿using CricketBiddingApp.Api.Data;
 using CricketBiddingApp.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using NLog;
 
 namespace CricketBiddingApp.Api.Controllers
 {
@@ -10,7 +9,6 @@ namespace CricketBiddingApp.Api.Controllers
     public class PlayersController : ControllerBase
     {
         private readonly CricketBiddingDbContext _context;
-        private Logger Logger = LogManager.GetCurrentClassLogger();
 
         public PlayersController(CricketBiddingDbContext context)
         {

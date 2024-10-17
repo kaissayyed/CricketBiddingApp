@@ -5,6 +5,7 @@ namespace CricketBiddingApp.Api.Models
     public class Auction
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public List<Player> Players { get; set; } = new List<Player>();
         public List<Team> Teams { get; set; } = new List<Team>();
         public decimal TotalBudget { get; set; }

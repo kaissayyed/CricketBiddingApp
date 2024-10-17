@@ -1,8 +1,6 @@
 ﻿using CricketBiddingApp.Api.Data;
 using CricketBiddingApp.Api.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CricketBiddingApp.Api.Controllers
 {
@@ -17,7 +15,6 @@ namespace CricketBiddingApp.Api.Controllers
             _context = context;
         }
 
-        // POST: api/Teams
         // GET: api/teams
         [HttpGet]
         public ActionResult<IEnumerable<Team>> GetTeams()

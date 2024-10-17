@@ -1,50 +1,48 @@
 ﻿@page "/auctions"
 @inject HttpClient Http
+@code {
+    private List<Auctions> auctions = new();
 
-<h3>Ongoing Auctions</h3>
-
-@if (auctions == null)
-{
-    <p>Loading auctions...</p>
+    protected override async Task OnInitializedAsync()
+    {
+        auctions = await Http.GetFromJsonAsync<List<Auctions>>("api/Auctions");
+    }
+    public class Auctions
+    {
+        public int Id { get; set; }
+        public List<Player> Players { get; set; }
+        public List<Team> Teams { get; set; }
+        public decimal TotalBudget { get; set; }
+        public DateTime StartDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
+    }
 }
-else
+
+<h3>Active Auctions</h3>
+@if (auctions != null)
 {
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Sr no</th>
-                <th>Auction StartTime</th>
-                <th>Auction EndTime</th>
-                <th>Rules</th>
+                <th>ID</th>
+                <th>Total Budget</th>
+                <th>Start Time</th>
+                <th>End Time</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var auction in auctions)
             {
                 <tr>
-                    <td>Id</td>
-                    <td>@auction.StartTime</td>
-                    <td>@auction.EndTime</td>
-                    <td>@auction.Rules</td>
+                    <td>@auction.Id</td>
+                    <td>@auction.TotalBudget</td>
+                    <td>@auction.StartDateTime.ToString("g")</td>
+                    <td>@auction.EndDateTime.ToString("g")</td>
+                    <td>
+                        <a href="/auction/@auction.Id" class="btn btn-primary">View Auction</a>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
-}
-
-@code {
-    private List<Auctions> auctions;
-
-    protected override async Task OnInitializedAsync()
-    {
-        auctions = await Http.GetFromJsonAsync<List<Auctions>>("api/Auction");
-    }
-
-    public class Auctions
-    {
-        public int Id { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
-        public AuctionRules Rules { get; set; }
-    }
 }

@@ -1,0 +1,49 @@
+﻿
+/* wwwroot/css/site.css */
+body {
+    background-color: #f9f9f9;
+}
+
+h3, h4 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.btn {
+    margin: 5px;
+}
+
+input[type="number"] {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+select.form-control {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
+
+button.btn-success {
+    margin-left: 10px;
+}
+.home-background {
+    background-image: url('/images/background.jpeg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    min-height: 100vh; /* Minimum height to cover the viewport */
+    color: white; /* Change text color for better visibility */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}

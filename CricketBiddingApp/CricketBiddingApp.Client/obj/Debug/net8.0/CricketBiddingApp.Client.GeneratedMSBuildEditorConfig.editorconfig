@@ -30,12 +30,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVjdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/AuctionRules.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVjdGlvblJ1bGVzLnJhem9y
+[C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/AuctionDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVjdGlvbkRldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/CreateAuction.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQXVjdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/Player.razor]
@@ -53,7 +57,3 @@ build_metadata.AdditionalFiles.CssScope = b-ay8ljtojmb
 [C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-g2mjj9ssw7
-
-[C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-mo2gbvz4r1

@@ -1,121 +1,92 @@
-﻿@page "/add-player-team"
+﻿@page "/players"
 @inject HttpClient Http
 
-<h3>Add Player and Team</h3>
+<h3>Sold and Unsold Players</h3>
 
-<EditForm Model="newPlayer" OnValidSubmit="AddPlayer">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <h4>Player Information</h4>
-    <div class="mb-3">
-        <label for="playerName" class="form-label">Player Name</label>
-        <InputText id="playerName" @bind-Value="newPlayer.Name" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label for="position" class="form-label">Position</label>
-        <InputText id="position" @bind-Value="newPlayer.Position" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label for="teamId" class="form-label">Select Team</label>
-        <select id="teamId" @bind="newPlayer.TeamId" class="form-select" required>
-            <option value="">Select a Team</option>
-            @foreach (var team in teams)
-            {
-                <option value="@team.Id">@team.Name</option>
-            }
-        </select>
-    </div>
-    <div class="mb-3 form-check">
-        <InputCheckbox id="isSold" @bind-Value="newPlayer.IsSold" class="form-check-input" />
-        <label for="isSold" class="form-check-label">Is Sold</label>
-    </div>
-    <div class="mb-3">
-        <label for="soldPrice" class="form-label">Sold Price</label>
-        <InputNumber id="soldPrice" @bind-Value="newPlayer.SoldPrice" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Add Player</button>
-</EditForm>
+<div>
+    <h4>Sold Players</h4>
+    @if (soldPlayers == null)
+    {
+        <p>Loading...</p>
+    }
+    else if (!soldPlayers.Any())
+    {
+        <p>No players have been sold yet.</p>
+    }
+    else
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in soldPlayers)
+                {
+                    <tr>
+                        <td>@player.Id</td>
+                        <td>@player.Name</td>
+                        <td>@player.Category</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
 
 <hr />
 
-<EditForm Model="newTeam" OnValidSubmit="AddTeam">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <h4>Team Information</h4>
-    <div class="mb-3">
-        <label for="teamName" class="form-label">Team Name</label>
-        <InputText id="teamName" @bind-Value="newTeam.Name" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label for="coach" class="form-label">Coach</label>
-        <InputText id="coach" @bind-Value="newTeam.Coach" class="form-control" required />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Add Team</button>
-</EditForm>
+<div>
+    <h4>Unsold Players</h4>
+    @if (unsoldPlayers == null)
+    {
+        <p>Loading...</p>
+    }
+    else if (!unsoldPlayers.Any())
+    {
+        <p>All players have been sold.</p>
+    }
+    else
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in unsoldPlayers)
+                {
+                    <tr>
+                        <td>@player.Id</td>
+                        <td>@player.Name</td>
+                        <td>@player.Category</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
 
 @code {
-    private Players newPlayer = new Players();
-    private Team newTeam = new Team();
-    private List<Team> teams = new List<Team>();
+    private List<Players> soldPlayers;
+    private List<Players> unsoldPlayers;
 
     protected override async Task OnInitializedAsync()
     {
-        // Fetch existing teams from the API to populate the dropdown
-        teams = await Http.GetFromJsonAsync<List<Team>>("api/Teams");
+        soldPlayers = await Http.GetFromJsonAsync<List<Players>>("api/Players/sold");
+        unsoldPlayers = await Http.GetFromJsonAsync<List<Players>>("api/Players/unsold");
     }
-
-    private async Task AddPlayer()
-    {
-        var response = await Http.PostAsJsonAsync("api/Players", newPlayer);
-        if (response.IsSuccessStatusCode)
-        {
-            // Handle success (e.g., show a message, reset the form, etc.)
-            newPlayer = new Players(); // Reset the form
-        }
-        else
-        {
-            // Handle error (e.g., show an error message)
-        }
-    }
-
-    private async Task AddTeam()
-    {
-        var response = await Http.PostAsJsonAsync("api/teams", newTeam);
-        if (response.IsSuccessStatusCode)
-        {
-            // Handle success (e.g., show a message, reset the form, etc.)
-            newTeam = new Team(); // Reset the form
-                                  // Optionally, refresh the teams list
-            teams = await Http.GetFromJsonAsync<List<Team>>("api/Teams");
-        }
-        else
-        {
-            // Handle error (e.g., show an error message)
-        }
-    }
-
     public class Players
     {
-
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Position { get; set; }
-        public int TeamId { get; set; }
+        public string Category { get; set; }
         public bool IsSold { get; set; }
-        public decimal? SoldPrice { get; set; }
-    }
-
-    public class Team
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Coach { get; set; }
-        public decimal? BudgetSpent { get; set; }
-        public int? PlayerCount { get; set; }
-        public ICollection<Players> Players { get; set; }
     }
 }

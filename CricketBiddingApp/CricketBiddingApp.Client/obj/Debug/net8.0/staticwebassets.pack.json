@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
       "Id": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
@@ -39,10 +43,6 @@
     {
       "Id": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\sample-data\\weather.json",
-      "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CricketBiddingApp.Client.Microsoft.AspNetCore.StaticWebAssets.props",
