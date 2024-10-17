@@ -1,3 +1,5 @@
+C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Private.Xml.wasm
+C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Text.Json.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\bin\Debug\net8.0\wwwroot\_framework\CricketBiddingApp.Client.pdb
@@ -726,7 +728,6 @@ C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Private.DataContractSerialization.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Private.Uri.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Private.Xml.Linq.wasm
-C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Private.Xml.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Reflection.DispatchProxy.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Reflection.Emit.ILGeneration.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Reflection.Emit.Lightweight.wasm
@@ -775,7 +776,6 @@ C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Text.Encoding.Extensions.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Text.Encoding.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Text.Encodings.Web.wasm
-C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Text.Json.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Text.RegularExpressions.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Threading.Channels.wasm
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\webcil\System.Threading.Overlapped.wasm
