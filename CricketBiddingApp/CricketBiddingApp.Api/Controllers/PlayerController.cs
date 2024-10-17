@@ -36,6 +36,19 @@ namespace CricketBiddingApp.Api.Controllers
             return player;
         }
 
+        [HttpGet("{categoryId}")]
+        public ActionResult<Player> GetPlayerByCategory(int categoryId)
+        {
+            var player = _context.Players.Find(categoryId);
+
+            if (player == null)
+            {
+                return NotFound();
+            }
+
+            return player;
+        }
+
         // POST: api/players
         [HttpPost]
         public ActionResult<Player> CreatePlayer([FromBody] Player player)

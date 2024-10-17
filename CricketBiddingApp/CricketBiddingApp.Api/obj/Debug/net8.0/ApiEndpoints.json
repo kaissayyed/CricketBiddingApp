@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionsController",
+    "Method": "GetAllAuctions",
+    "RelativePath": "api/Auctions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CricketBiddingApp.Api.Models.Auction, CricketBiddingApp.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionsController",
     "Method": "CreateAuction",
     "RelativePath": "api/Auctions",
     "HttpMethod": "POST",
@@ -10,27 +30,6 @@
       {
         "Name": "auction",
         "Type": "CricketBiddingApp.Api.Models.Auction",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionsController",
-    "Method": "PlaceBid",
-    "RelativePath": "api/Auctions/{auctionId}/bid",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "auctionId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "bidRequest",
-        "Type": "CricketBiddingApp.Api.Models.BidRequest",
         "IsRequired": true
       }
     ],
@@ -63,6 +62,27 @@
     ]
   },
   {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.AuctionsController",
+    "Method": "PlaceBid",
+    "RelativePath": "api/Auctions/{id}/bid",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bid",
+        "Type": "CricketBiddingApp.Api.Models.BidRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CricketBiddingApp.Api.Controllers.PlayersController",
     "Method": "GetPlayers",
     "RelativePath": "api/Players",
@@ -93,6 +113,32 @@
       {
         "Name": "player",
         "Type": "CricketBiddingApp.Api.Models.Player",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CricketBiddingApp.Api.Models.Player",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.PlayersController",
+    "Method": "GetPlayerByCategory",
+    "RelativePath": "api/Players/{categoryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -173,6 +219,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "CricketBiddingApp.Api.Controllers.RefreshController",
+    "Method": "RefreshDatabase",
+    "RelativePath": "api/Refresh/refresh",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "CricketBiddingApp.Api.Controllers.TeamsController",

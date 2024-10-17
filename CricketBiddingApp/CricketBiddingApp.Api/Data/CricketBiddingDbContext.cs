@@ -21,7 +21,7 @@ namespace CricketBiddingApp.Api.Data
                 .ToTable("Auction");
             base.OnModelCreating(modelBuilder);
         }
-
+        
     }
 
     

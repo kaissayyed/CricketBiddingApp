@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/PlaceBid.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxhY2VCaWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Kais/Desktop/Dev/CricketBiddingApp/CricketBiddingApp/CricketBiddingApp.Client/Pages/Player.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGxheWVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

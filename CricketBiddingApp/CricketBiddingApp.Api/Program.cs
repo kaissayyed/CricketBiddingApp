@@ -8,6 +8,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAuctionService, AuctionService>();
+builder.Services.AddScoped<CricketBiddingService>();
+
 
 // PostgreSQL configuration
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQLConnection");
@@ -30,6 +32,7 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine($"An error occurred while migrating the database: {ex.Message}");
     }
 }
+
 
 // Swagger setup in development environment
 if (app.Environment.IsDevelopment())
