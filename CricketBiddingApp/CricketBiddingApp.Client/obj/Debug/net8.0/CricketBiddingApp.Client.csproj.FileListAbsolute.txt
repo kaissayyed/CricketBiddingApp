@@ -1030,3 +1030,4 @@ C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\refint\CricketBiddingApp.Client.dll
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\CricketBiddingApp.Client.pdb
 C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\ref\CricketBiddingApp.Client.dll
+C:\Users\Kais\Desktop\Dev\CricketBiddingApp\CricketBiddingApp\CricketBiddingApp.Client\obj\Debug\net8.0\scopedcss\Pages\Home.razor.rz.scp.css

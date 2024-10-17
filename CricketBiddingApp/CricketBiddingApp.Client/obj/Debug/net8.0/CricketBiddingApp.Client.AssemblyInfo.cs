@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CricketBiddingApp.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0564daf23eeb8be29d3893b0b24c77f0cc466105")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10d66555161c327c5a8189bf931b0febc886ffb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CricketBiddingApp.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CricketBiddingApp.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A43u8UvV3KOeY7qVe+ERT8xfzXwO2PhDfOsBqrBgqWw=",
+  "Hash": "lZzXAKVijebhohnO+B+7l5dqaBsy16d95EC4/NbSmhU=",
   "Source": "CricketBiddingApp.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7900,6 +7900,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icon-192.png"
+    },
+    {
+      "Identity": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\images\\background.jpeg",
+      "SourceId": "CricketBiddingApp.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/background.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\background.jpeg"
     },
     {
       "Identity": "C:\\Users\\Kais\\Desktop\\Dev\\CricketBiddingApp\\CricketBiddingApp\\CricketBiddingApp.Client\\wwwroot\\index.html",

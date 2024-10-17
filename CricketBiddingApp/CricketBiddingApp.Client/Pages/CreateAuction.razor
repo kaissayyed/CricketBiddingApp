@@ -5,35 +5,58 @@
 
 <EditForm Model="newAuction" OnValidSubmit="SubmitAuction">
     <div class="form-group">
-        <label for="playerId">Player ID</label>
-        <InputNumber id="playerId" @bind-Value="newAuction.PlayerId" class="form-control" />
+        <label for="startTime">Start Time</label>
+        <InputDate id="startTime" @bind-Value="newAuction.StartTime" class="form-control" />
     </div>
     <div class="form-group">
-        <label for="teamId">Team ID</label>
-        <InputNumber id="teamId" @bind-Value="newAuction.TeamId" class="form-control" />
+        <label for="endTime">End Time</label>
+        <InputDate id="endTime" @bind-Value="newAuction.EndTime" class="form-control" />
+    </div>
+
+    <h4>Auction Rule</h4>
+    <div class="form-group">
+        <label for="playerLimit">Player Limit</label>
+        <InputNumber id="playerLimit" @bind-Value="newAuction.AuctionRule.PlayerLimit" class="form-control" />
     </div>
     <div class="form-group">
-        <label for="amount">Bid Amount</label>
-        <InputNumber id="amount" @bind-Value="newAuction.Amount" class="form-control" />
+        <label for="maxBudget">Max Budget</label>
+        <InputNumber id="maxBudget" @bind-Value="newAuction.AuctionRule.MaxBudget" class="form-control" />
     </div>
 
     <button type="submit" class="btn btn-primary">Create Auction</button>
 </EditForm>
 
 @code {
-    private Auction newAuction = new Auction();
+    private Auction newAuction = new Auction
+        {
+            AuctionRule = new AuctionRule()
+        };
 
-    // Renamed from CreateAuction to SubmitAuction
     private async Task SubmitAuction()
     {
-        await Http.PostAsJsonAsync("api/auctions", newAuction);
-        // Show success message or redirect after creation
+        var response = await Http.PostAsJsonAsync("api/Auction", newAuction);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Handle successful creation, e.g., show a success message or redirect
+            // NavigationManager.NavigateTo("/auction-success");
+        }
+        else
+        {
+            // Handle failure, e.g., show an error message
+        }
     }
 
     public class Auction
     {
-        public int PlayerId { get; set; }
-        public int TeamId { get; set; }
-        public decimal Amount { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public AuctionRule AuctionRule { get; set; }
+    }
+
+    public class AuctionRule
+    {
+        public int PlayerLimit { get; set; }
+        public decimal MaxBudget { get; set; }
     }
 }

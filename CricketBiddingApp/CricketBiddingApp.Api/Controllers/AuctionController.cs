@@ -31,7 +31,6 @@ namespace CricketBiddingApp.Api.Controllers
             auction.IsActive = true; // Set auction as active
             _context.Auctions.Add(auction);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction(nameof(GetAuction), new { id = auction.Id }, auction);
         }
 

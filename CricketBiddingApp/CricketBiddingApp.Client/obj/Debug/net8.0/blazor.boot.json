@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CricketBiddingApp.Client",
   "resources": {
-    "hash": "sha256-BYKm8zkqldW5jcVXCOgaMV0/uj5PI1pxpWTeANQnLkY=",
+    "hash": "sha256-jBbi6bx9AL9eca4kS1yR6i3pYyGopaHebJSMpCZALy4=",
     "jsModuleNative": {
       "dotnet.native.8.0.8.q23v4x31ki.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-Gz8PyW2/fwihe5ul81OwmRUrU71r+KtbyRw6xlOGD+Q=",
       "netstandard.wasm": "sha256-jMTqIQzoDS810lyhZpMO5eEC36EzntXqSVn+2qwkOMQ=",
       "System.Private.CoreLib.wasm": "sha256-NFj5WE5VLP2LptZIRJCUIc1AMk06FmxpsSILfPISwAw=",
-      "CricketBiddingApp.Client.wasm": "sha256-4y4OGxSABbDwtAgIyf2T3Tgxm/bY0o3+Row5FDtfatQ="
+      "CricketBiddingApp.Client.wasm": "sha256-gFgskeZ/c0UfULYv9/InljMC8OrHigx67AeZ5gD1+oM="
     },
     "pdb": {
-      "CricketBiddingApp.Client.pdb": "sha256-VdMqYM3ePT/4qk1duURHE+W3BsrmxU05DAWre9nRGSM="
+      "CricketBiddingApp.Client.pdb": "sha256-FORG3UT1a4gOMKgr0X2fC6v2ktX4WtV1ZN8PV8G395c="
     }
   },
   "cacheBootResources": true,
